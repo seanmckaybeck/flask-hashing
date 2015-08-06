@@ -36,7 +36,7 @@ check hashes of data as follows:::
 
     h = hashing.hash_value('secretdata', salt='abcd')
     if hashing.check_value(h, 'secretdata', salt='abcd'):
-        do some stuff because the hashes are equal
+        # do some stuff because the hashes are equal
 
 And that is all there is to it!
 
