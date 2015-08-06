@@ -8,6 +8,11 @@ for hashing data within a Flask application.
 Flask-Bcrypt restricts you to using bcrypt. What if you want
 to use a different hash function? This extension provides access
 to other commonly used hash functions such as SHA256.
+
+Links
+-----
+
+
 """
 from setuptools import setup
 
