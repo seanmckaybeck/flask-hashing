@@ -4,6 +4,15 @@ Flask-Hashing is a Flask extension that provides an easy way to
 hash data and check a hash of a value against a given hash.
 Flask-Hashing uses `hashlib` to actually hash data.
 
+This extension prevents the user from needing to worry about how
+to hash data. Instead, developers are provided a simple call to
+do any necessary hashing of data.
+
+This extension is intended to be used in place of Flask-Bcrypt,
+if the user so desires. Not everyone may want to use `bcrypt`
+for their hashing needs, and this provides a way to handle that
+use case.
+
 ## Installation
 
 ```
