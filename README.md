@@ -51,4 +51,6 @@ $ python test_hashing.py
 
 ## Documentation
 
-FILL ME IN
+Install `sphinx` then in the `docs` directory run `make html`.
+
+You can see a live copy of the docs at [Read the Docs](http://flask-hashing.readthedocs.org/en/latest/).
