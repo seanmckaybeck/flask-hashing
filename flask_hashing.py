@@ -9,6 +9,10 @@ try:
     from hashlib import algorithms as algs
 except ImportError:
     from hashlib import algorithms_available as algs
+from sys import version_info
+
+
+VER = version_info[0]
 
 
 class Hashing(object):
@@ -89,12 +93,22 @@ class Hashing(object):
         '''
         def hashit(value, salt):
             h = hashlib.new(self.algorithm)
-            h.update('{}{}'.format(salt, value))
+            tgt = salt+value
+            h.update(tgt)
             return h.hexdigest()
-        val = value
+
+        def fix_unicode(value):
+            if VER < 3 and isinstance(value, unicode):
+                value = str(value)
+            elif VER >= 3 and isinstance(value, str):
+                value = str.encode(value)
+            return value
+
+        salt = fix_unicode(salt)
         for i in range(self.rounds):
-            val = hashit(val, salt)
-        return val
+            value = fix_unicode(value)
+            value = hashit(value, salt)
+        return value
 
     def check_value(self, value_hash, value, salt=''):
         '''Checks the specified hash value against the hash of the provided
