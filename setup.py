@@ -19,7 +19,7 @@ from setuptools import setup
 
 setup(
     name='Flask-Hashing',
-    version='1.0',
+    version='1.1',
     url='https://github.com/ThaWeatherman/flask-hashing',
     license='MIT',
     author='Sean Beck',
